@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
-const uglify = require('gulp-uglify');
 
 
 function compilaSass() {
@@ -28,21 +27,11 @@ function browser() {
 
 function watch() {
     gulp.watch('assets/scss/*.scss', compilaSass);
-    gulp.watch('./assets/js/*.js', gulpJS);
     gulp.watch(['*.html']).on('change', browserSync.reload);
-}
-
-function gulpJS() {
-    return gulp
-        .src('./assets/js/*.js')
-        .pipe(uglify())
-        // .pipe(gulp.dest('./assets/js'))
-        .pipe(browserSync.stream());
 }
 
 gulp.task('sass', compilaSass);
 gulp.task('browser-sync', browser);
 gulp.task('watch', watch);
-gulp.task('mainjs', gulpJS);
 
-gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'mainjs'));
+gulp.task('default', gulp.parallel('watch', 'browser-sync'));
