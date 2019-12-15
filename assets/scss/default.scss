@@ -22,10 +22,25 @@
         line-height: 22px;
         border: 0;
         color: #FF2121;
-        padding: 10px 62px;
+        padding: 10px 72px;
         margin-top: 48px;
     }
+    input {
+        border: 0;
+        border-bottom: 2px solid #3703A5;
+        margin-bottom: 24px;
+        padding: 0 5px;
+        width: 80%;
+        color: #3703A5;
+        &:checked {
+            border: 50px solid blue;
+        }
+    }
+    .fa-spin {
+        font-size: 50px;
+    }
     header {
+        min-height: calc(100vh - 50px);
         input {
             width: 31px;
             border: 0;
@@ -39,6 +54,9 @@
                 box-shadow: 0 0 0 0;
             }
         }
+    }
+    section {
+        min-height: 100vh;
     }
 }
 
