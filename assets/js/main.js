@@ -16,4 +16,14 @@ $(document).ready(function() {
         setTimeout(function() { window.location = './selecionar.html'; }, 3000);
 
     });
+    $('.maismenos').click(function(e) {
+        e.preventDefault();
+        var valor = $(this).html();
+        if (valor == "Ver mais") {
+            $(this).html('Ver menos');
+        } else {
+            $(this).html('Ver mais');
+        }
+
+    });
 });
